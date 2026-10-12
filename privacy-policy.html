@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Bath Plan Pro</title>
+  <meta name="description" content="Official Privacy Policy for Bath Plan Pro (com.bathplanpro.app) 2D bathroom layout planner, tile calculator, and renovation cost estimator." />
+  <style>
+    :root {
+      --bg: #f8f4ec;
+      --card: #fffdf9;
+      --border: #e2dacb;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0284c7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 24px 16px 64px;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 28px;
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+    }
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 17px;
+      margin: 26px 0 10px;
+      color: var(--text);
+    }
+    p, li {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    strong {
+      color: var(--text);
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12.5px;
+      background: #f1f5f9;
+      padding: 2px 5px;
+      border-radius: 4px;
+      color: #0f172a;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <span class="badge">Privacy &amp; Data Protection Policy</span>
+    <h1>Privacy Policy — Bath Plan Pro</h1>
+    <div class="meta">
+      Effective Date: October 2026 &middot; Package Name: <code>com.bathplanpro.app</code> &middot; Applies to Bath Plan Pro Android App, Web App &amp; PWA
+    </div>
+
+    <h2>1. Introduction &amp; Scope</h2>
+    <p>
+      Bath Plan Pro (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) operates the Bath Plan Pro mobile application for Android (<code>com.bathplanpro.app</code>) and web application. Bath Plan Pro is a professional 2D bathroom layout planner, tile/grout/adhesive quantity calculator, and renovation cost estimator. This Privacy Policy describes the exact information our application and integrated services collect, store, process, and share.
+    </p>
+
+    <h2>2. Information We Collect &amp; Store</h2>
+    <ul>
+      <li>
+        <strong>Account &amp; Authentication Information (Firebase Authentication &amp; Cloud Firestore):</strong>
+        When you create an account or sign in using Email/Password or Google Sign-In, Firebase Authentication processes your email address, authentication credentials, and unique user ID (<code>uid</code>). In our <code>users/{userId}</code> Cloud Firestore collection, we store your <code>uid</code>, <code>email</code>, <code>displayName</code>, optional <code>company</code> name, selected <code>roleType</code> (<code>homeowner</code>, <code>diy</code>, <code>designer</code>, or <code>contractor</code>), preferred <code>currency</code>, <code>defaultUnits</code>, subscription <code>plan</code> (<code>free</code> or <code>pro</code>), <code>billingCycle</code>, and account timestamps.
+      </li>
+      <li>
+        <strong>Bathroom Project Data (Cloud Firestore &amp; Local Offline Cache):</strong>
+        When you save a bathroom renovation project in the <code>projects/{projectId}</code> collection, we store room dimensions, wall openings (doors and windows), placed 2D sanitaryware fixtures, tile dimensions, grout/adhesive calculation settings, and renovation cost line items associated with your <code>userId</code>. For offline reliability on mobile devices, projects are also cached on your device in <code>localStorage</code> under <code>bathplanpro_cached_projects_{userId}</code>.
+      </li>
+      <li>
+        <strong>Subscription &amp; Purchase Verification Data (Google Play Billing):</strong>
+        On Android, paid subscriptions (<code>bathplanpro_pro_monthly</code> and <code>bathplanpro_pro_yearly</code>) are processed directly by Google Play Billing (<code>com.android.vending.BILLING</code>). Bath Plan Pro <strong>never</strong> collects, receives, or stores your credit card number, bank account details, or billing address. We process only the Google Play <code>productId</code>, <code>purchaseToken</code>, <code>orderId</code>, renewal state, and expiration timestamp via our verification endpoint (<code>/api/billing/verify-subscription</code>) to verify and unlock Pro entitlements.
+      </li>
+      <li>
+        <strong>PDF Export &amp; Temporary Device Cache:</strong>
+        When you export an A4 PDF project specification on Android, the generated PDF file is temporarily written to the app&rsquo;s local cache directory (<code>Directory.Cache</code>) solely to invoke the native Android system share sheet (<code>@capacitor/share</code>).
+      </li>
+      <li>
+        <strong>Analytics &amp; Diagnostics:</strong>
+        No third-party advertising SDKs, behavioral ad networks, or cross-app tracking identifiers (such as the Android Advertising ID) are embedded in the Android application.
+      </li>
+    </ul>
+
+    <h2>3. How We Use Information &amp; Data Sharing</h2>
+    <p>
+      We use collected data strictly to authenticate your account, store and synchronize your 2D bathroom plans and material calculations across devices, verify Google Play Pro subscriptions, and provide customer support. We do <strong>not</strong> sell, rent, or share your personal data or project specifications with advertisers or data brokers. Data is processed only by core service providers necessary to deliver the app: <strong>Google Firebase</strong> (Authentication and Cloud Firestore database) and <strong>Google Play Billing</strong> (subscription payments).
+    </p>
+
+    <h2>4. Data Security &amp; Encryption</h2>
+    <p>
+      All data transmitted between Bath Plan Pro, Firebase Authentication, Cloud Firestore, and our backend verification service is encrypted in transit via HTTPS/TLS. Access to Cloud Firestore records is restricted by server-side security rules (<code>firestore.rules</code>) so only the authenticated owner (<code>request.auth.uid == userId</code>) can access, modify, or delete their profile and bathroom projects.
+    </p>
+
+    <h2>5. Data Retention &amp; Account Deletion</h2>
+    <p>
+      We retain your account profile and saved bathroom projects for as long as your account remains active. You may delete individual bathroom projects at any time from your Dashboard, or permanently delete your entire account and all associated data:
+    </p>
+    <ul>
+      <li>
+        <strong>In-App Instant Deletion:</strong> Open Bath Plan Pro &rarr; <strong>Account &amp; Plan</strong> (<code>/account</code>) &rarr; click <strong>Delete Account &amp; Data</strong> and confirm. This permanently deletes all of your saved projects in Cloud Firestore, deletes your user profile document, clears local device caches, and deletes your Firebase Authentication user account.
+      </li>
+      <li>
+        <strong>Web Deletion Page (Without Opening the App):</strong> Visit <a href="/delete-account">/delete-account</a> (or <a href="/delete-account.html">/delete-account.html</a>) to sign in and delete your account immediately or submit an account deletion request via email.
+      </li>
+    </ul>
+
+    <h2>6. Your Privacy Rights</h2>
+    <p>
+      Depending on your jurisdiction (including GDPR, UK GDPR, and CCPA), you have the right to access, rectify, export, or erase your personal data. You can edit your profile preferences in Workspace Settings, export your projects to PDF, or delete your account at any time.
+    </p>
+
+    <h2>7. Contact Information</h2>
+    <p>
+      For privacy inquiries, data protection requests, or account deletion assistance, contact us at:
+      <a href="mailto:privacy@bathplanpro.com"><strong>privacy@bathplanpro.com</strong></a>
+    </p>
+
+    <div class="footer">
+      <span>&copy; 2026 Bath Plan Pro (<code>com.bathplanpro.app</code>)</span>
+      <span>
+        <a href="/">Open Bath Plan Pro</a> &middot;
+        <a href="/delete-account">Account &amp; Data Deletion</a> &middot;
+        <a href="/terms">Terms of Service</a>
+      </span>
+    </div>
+  </main>
+</body>
+</html>
